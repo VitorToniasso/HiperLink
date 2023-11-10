@@ -88,11 +88,16 @@ body * {
     left: 0;
     z-index: 1;
     transform: translateY(-50%);
+
+    animation: slide-out 0.3s forwards;
+}
+
+#switch button:hover {
+    outline: 9px solid var(--highlight-color);
 }
 
 .light #switch button {
-    right: 0;
-    left: initial;
+    animation: slide-in 0.3s forwards;
 }
 
 
@@ -186,5 +191,25 @@ footer {
 
     .light {
         --bg-url: url(Assents/bg-desktop-light.jpg);
+    }
+}
+
+/* animation */
+
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
     }
 }
